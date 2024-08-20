@@ -1,13 +1,12 @@
-//import react into the bundle
 import React from "react";
-import ReactDOM from "react-dom/client";
-
-// include your styles into the webpack bundle
+import ReactDOM from "react-dom";
+import { SongsProvider } from "./Context/SongsProvider"; // Mantener esta importación
+import Home from "./component/home";
 import "../styles/index.css";
 
-//import your own components
-import Home from "./component/home.jsx";
-
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
-
+ReactDOM.render(
+  <SongsProvider>
+    <Home />
+  </SongsProvider>,
+  document.getElementById("app")
+);
